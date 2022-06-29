@@ -1,6 +1,5 @@
 import { Button } from "react-bootstrap";
 
-// import Count from "./count.js";
 const CounterBtn = ({ text, variant, count, setCount }) => {
 
     const changeCount = () => {
