@@ -1,16 +1,27 @@
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchProducts } from '../../redux/features/shopSlice';
 export const Shop = () => {
+
+    const dispatch = useDispatch();
     useEffect(() => {
-        fetchProducts();
+        dispatch(fetchProducts());
+        // fetchProducts();
     }, [])
 
-    const fetchProducts = () => {
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => setProducts(json))
-    }
-    const [products, setProducts] = useState([])
+    // const fetchProducts = () => {
+    //     fetch('https://fakestoreapi.com/products')
+    //         .then(res => res.json())
+    //         .then(json => setProducts(json))
+    // }
+    //fetch api from redux toolkit
+    // const { image, title, description, category, price } = product;
+    //gloal state
+    // const [products, setProducts] = useState([])
+    // const reduxProducts = useSelector(state => state.shopSlice)
+    const products = useSelector(state => state.shopSlice.products);
+    console.log("here", products);
     return (
         <div className='row flex-row'>
             {
