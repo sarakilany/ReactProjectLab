@@ -5,6 +5,7 @@ import Todo from './pages/todo/Todo';
 import { Product } from './pages/shop/Product';
 import Navbar from './components/navbar/Navbar.js';
 import { Count } from './components/counter/Count.js';
+import { Singup } from './pages/signup';
 import './App.css';
 import CounterBtn from './components/counter/CounterBtn.js';
 import { useState, useEffect } from 'react';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/counter" element={<Count />} />
           <Route path="/products/:id" element={<Product />} />
+          <Route path='/signup' element={<Singup />} />
           <Route path='/todo' element={<Todo />} />
         </Routes>
       </BrowserRouter>
